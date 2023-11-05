@@ -1,6 +1,6 @@
 "use client"
 
-import { Dispatch, MouseEventHandler, SetStateAction, useState } from "react"
+import { MouseEventHandler, useState } from "react"
 import styles from "./scss/Navbar.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
@@ -10,7 +10,7 @@ export default function Navbar() {
   const [showNav, setShowNav] = useState(false)
   const links = ["Home", "About", "Contact", "Projects"]
   const navElements = links.map((link) => (
-    <div className={styles.navItem}>
+    <div key={link} className={styles.navItem}>
       <Link href={`/${link.toLowerCase()}`}>{link}</Link>
     </div>
   ))
