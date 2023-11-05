@@ -1,0 +1,54 @@
+$border-size: 1%;
+$rounding: 0.675rem;
+
+.thumbnail,
+.caption,
+.content {
+  z-index: 1;
+}
+
+.thumbnail {
+  padding: $border-size;
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(
+    45deg,
+    black 0%,
+    black 50%,
+    red 50%,
+    red 60%,
+    orange 60%,
+    orange 70%,
+    yellow 70%,
+    yellow 80%,
+    green 80%,
+    green 90%,
+    blue 90%,
+    blue 100%,
+  );
+  background-size: 300%;
+  background-position: top left;
+  border-radius: $rounding;
+  transition: background-position 200ms ease;
+
+  &:hover {
+    background-position: bottom right;
+  }
+}
+
+.content {
+  background-color: white;
+  border-radius: calc($rounding - 2px);
+  padding: 1rem;
+}
+
+.caption {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 0.175rem solid black;
+  padding: 1rem;
+}
